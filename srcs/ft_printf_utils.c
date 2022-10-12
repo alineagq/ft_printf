@@ -6,7 +6,7 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 23:20:26 by aqueiroz          #+#    #+#             */
-/*   Updated: 2022/10/11 23:21:16 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2022/10/12 15:15:07 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,29 @@ char	*ft_itoa(int n)
 		nb = -nb;
 		ptr[0] = '-';
 	}
+	while (nb > 0)
+	{
+		ptr[size--] = nb % 10 + '0';
+		nb -= nb % 10;
+		nb /= 10;
+	}
+	return (ptr);
+}
+
+char	*ft_uitoa(unsigned int n)
+{
+	char				*ptr;
+	unsigned long int	nb;
+	int					size;
+
+	nb = n;
+	size = ft_digitlen(nb);
+	ptr = (char *)malloc(size + 1);
+	if (!ptr)
+		return (NULL);
+	ptr[size--] = '\0';
+	if (nb == 0)
+		ptr[0] = 48;
 	while (nb > 0)
 	{
 		ptr[size--] = nb % 10 + '0';

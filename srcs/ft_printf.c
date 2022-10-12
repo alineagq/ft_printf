@@ -6,7 +6,7 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:18:24 by aqueiroz          #+#    #+#             */
-/*   Updated: 2022/10/12 09:35:22 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2022/10/12 15:26:48 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	len = 0;
 	va_start(args, str);
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] != '%')
 			len += write(1, &(str[i]), 1);
@@ -59,5 +59,7 @@ int	print_flags(char flag, va_list args)
 		len += ft_printhex_up(va_arg(args, int), 0);
 	else if (flag == '%')
 		len += ft_printchar('%');
+	else
+		len += ft_printchar(flag);
 	return (len);
 }

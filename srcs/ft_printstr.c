@@ -6,13 +6,13 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 23:05:20 by aqueiroz          #+#    #+#             */
-/*   Updated: 2022/10/12 09:24:42 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:22:02 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printstr(char *str)
+int	ft_printstr(char *str)
 {
 	int	len;
 
