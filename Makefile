@@ -6,7 +6,7 @@
 #    By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 19:18:13 by aqueiroz          #+#    #+#              #
-#    Updated: 2022/11/17 14:08:34 by aqueiroz         ###   ########.fr        #
+#    Updated: 2023/01/08 03:22:29 by aqueiroz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ $(NAME): $(OBJS)
 
 %.o: srcs/%.c
 	@mkdir -p objs
-	$(CC) $(CFLAGS) -I $(PATH_INCLUDE) -c $< -o objs/$@
+	@$(CC) $(CFLAGS) -I $(PATH_INCLUDE) -c $< -o objs/$@
 
 clean:
-	rm -fdr objs
+	@rm -fdr objs
 
 fclean: clean
 	@rm -f $(NAME)
